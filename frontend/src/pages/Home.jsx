@@ -15,10 +15,12 @@ const Home = () => {
           <div className="rating">{post.rating}</div>
           <h2>{post.title}</h2>
 
-          <small>console list</small>
+          <small>Sub Heading</small>
 
           <p>{post.body.substring(0, 200)}...</p>
-          <Link to={`/details/${post.id}`}>Read more</Link>
+          <Link className="link" to={`/details/${post.id}`}>
+            Read more
+          </Link>
         </div>
       ))}
     </div>
