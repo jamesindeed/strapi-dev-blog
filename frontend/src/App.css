@@ -13,3 +13,41 @@
   border-bottom: 2px solid;
   padding-bottom: 10px;
 }
+
+/* review list */
+.post-card {
+  background: white;
+  margin: 60px auto;
+  padding: 1px 20px 20px 90px;
+  position: relative;
+  border-radius: 10px;
+}
+.post-card .rating {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background: #e78fb8;
+  font-size: 2em;
+  border-radius: 20px;
+  padding-top: 3px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: white;
+}
+
+.post-card p {
+  margin: 0 5vw 3vh 0;
+}
+
+.post-card h2 {
+  margin-bottom: 0;
+}
+.post-card small {
+  margin-right: 10px;
+  color: #777;
+}
+
+.post-card .link {
+  font-size: 0.8em;
+}
