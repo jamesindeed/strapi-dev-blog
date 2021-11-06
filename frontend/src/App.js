@@ -1,21 +1,31 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetails";
 import Catagory from "./pages/Catagory";
 import Header from "./components/Header";
 import "./App.css";
 
+// apollo cliect
+// apollo client
+const client = new ApolloClient({
+  uri: "http://localhost:1337/graphql",
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="details/:id" element={<PostDetail />} />
-          <Route path="catagory/:id" element={<Catagory />} />
-        </Routes>
-      </div>
+      <ApolloProvider client={client}>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="details/:id" element={<PostDetail />} />
+            <Route path="catagory/:id" element={<Catagory />} />
+          </Routes>
+        </div>
+      </ApolloProvider>
     </Router>
   );
 }
