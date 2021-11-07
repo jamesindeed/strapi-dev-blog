@@ -9,6 +9,10 @@ const POSTS = gql`
       id
       rating
       body
+      categories {
+        name
+        id
+      }
     }
   }
 `;
@@ -26,7 +30,9 @@ const Home = () => {
           <div className="rating">{post.rating}</div>
           <h2>{post.title}</h2>
 
-          <small>Sub Heading</small>
+          {post.categories.map((c) => (
+            <small key={c.id}>{c.name}</small>
+          ))}
 
           <p>{post.body.substring(0, 200)}...</p>
           <Link className="link" to={`/details/${post.id}`}>

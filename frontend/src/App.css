@@ -14,6 +14,14 @@
   padding-bottom: 10px;
 }
 
+.header .catagories {
+  text-align: right;
+}
+
+.header .catagories a {
+  margin-left: 10px;
+}
+
 /* review list */
 .post-card {
   background: white;

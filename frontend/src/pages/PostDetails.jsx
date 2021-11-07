@@ -9,6 +9,10 @@ const POST = gql`
       body
       rating
       id
+      categories {
+        id
+        name
+      }
     }
   }
 `;
@@ -22,14 +26,14 @@ const PostDetails = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Cannot load page! :(</p>;
 
-  console.log(data);
-
   return (
     <div className="post-card">
       <div className="rating">{data.post.rating}</div>
       <h2>{data.post.title}</h2>
 
-      <small>Sub Heading</small>
+      {data.post.categories.map((c) => (
+        <small key={c.id}>{c.name}</small>
+      ))}
 
       <p>{data.post.body}</p>
     </div>
